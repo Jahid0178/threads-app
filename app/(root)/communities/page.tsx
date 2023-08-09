@@ -1,6 +1,7 @@
 import CommunityCard from "@/components/cards/CommunityCard/CommunityCard";
 import UserCard from "@/components/cards/UserCard/UserCard";
 import ProfileHeader from "@/components/shared/ProfileHeader/ProfileHeader";
+import Searchbar from "@/components/shared/Searchbar/Searchbar";
 import ThreadsTab from "@/components/shared/ThreadsTab/ThreadsTab";
 import { profileTabs } from "@/constants";
 import { fetchCommunities } from "@/lib/actions/community.actions";
@@ -30,8 +31,9 @@ const Page = async () => {
       <h1 className="head-text mb-10">Search</h1>
 
       {/* Search Bar */}
+      <Searchbar routeType="community" />
 
-      <div className="mt-14 flex flex-col gap-9">
+      <div className="mt-14 flex flex-row flex-wrap gap-9">
         {result.communities.length === 0 ? (
           <p className="no-result">No Communities</p>
         ) : (
