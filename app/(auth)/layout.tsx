@@ -22,7 +22,9 @@ export default function RootLayout({
           className={`${inter.className} bg-dark-1`}
           suppressHydrationWarning={true}
         >
-          {children}
+          <div className="w-full flex justify-center items-center min-h-screen">
+            {children}
+          </div>
         </body>
       </html>
     </ClerkProvider>
