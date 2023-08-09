@@ -1,12 +1,22 @@
 import mongoose from "mongoose";
 
 const communitySchema = new mongoose.Schema({
-  id: { type: String, require: true },
-  username: { type: String, require: true },
-  name: { type: String, require: true },
-  image: { type: String, require: true },
-  bio: { type: String, require: true },
-  createBy: {
+  id: {
+    type: String,
+    required: true,
+  },
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  image: String,
+  bio: String,
+  createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
